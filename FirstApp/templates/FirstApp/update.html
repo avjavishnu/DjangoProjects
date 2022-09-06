@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update data</title>
+</head>
+<body>
+<h1>Updating data</h1>
+<form action="RecordUpdate/{{ query.id }}" method="post">
+    {% csrf_token %}
+    <p>Item Id</p>
+    <input name="itemid" value="{{ query.itemid }}">
+    <p>Item name</p>
+    <input name="ItemName" value="{{ query.ItemName }}">
+    <p>Price</p>
+    <input name="Price" value="{{ query.Price }}">
+    <input type="submit" value = "Submit">
+</form>
+</body>
+</html>

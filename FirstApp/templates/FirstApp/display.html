@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product details</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>sno</td>
+        <td>
+            item Id
+        </td>
+        <td>
+            Item Name
+        </td>
+        <td>
+            Price
+        </td>
+        <td>
+            Availability
+        </td>
+        <td> delete </td>
+    </tr>
+    {% for item in query %}
+    <tr>
+        <td> <a href="update/{{ item.id }}">{{ item.id }}</a></td>
+        <td>
+            {{ item.itemid }}
+        </td>
+         <td>
+            {{ item.ItemName}}
+        </td>
+         <td>
+            {{ item.Price }}
+        </td>
+         <td>
+            {{ item.Availability }}
+        </td>
+        <td><a href="deleteproduct/{{ item.id }}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'FAaddp' %}"> Add Product </a>
+</body>
+</html>
